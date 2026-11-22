@@ -3,7 +3,15 @@ Week 05 Review:
 
     2. Agentic workflow (Zero Coding)
 
-Class starts at 10:05 AM EST
+BDD Layers:
+
+    Business Layer
+
+    Technical Layer
+
+POM (Page Object Model):
+    Creating a seperate page class for each web page to store web page' elements & actions
+
 
 Next Week: 
     TypeScript Modules

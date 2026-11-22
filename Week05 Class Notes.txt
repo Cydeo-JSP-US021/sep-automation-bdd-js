@@ -13,6 +13,22 @@ POM (Page Object Model):
     Creating a seperate page class for each web page to store web page' elements & actions
 
 
+BDD Automation Framework workflow:
+    1. Create a new feature branch.
+
+    2. Create feature file -> Analyze the requirements of the feature -> explore the application -> Write scenarios
+
+    3. Generate step definitions -> Write the automation scripts in the step definitions -> run the automation
+
+    4.  If Tests are Passing ---> Create PR
+        If Tests are not passing ----> Do failure analysis to determine the filaure reason:
+                                            if failing due to the code issue ---> fix the code
+                                            if failing due to environment issue ---> not code issue, can not fix it our selves
+                                            if failing due to product defect --> create a bug ticket
+
+
+
+
 Next Week: 
     TypeScript Modules
     TypeScript version of BDD framework

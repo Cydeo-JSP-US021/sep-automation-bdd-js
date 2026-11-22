@@ -19,7 +19,7 @@ export class LeftMainPage extends BasePage {
 
     this.footerElements = page.locator(".details-footer a");
 
-    this.programName = page.locator("//p[@class='course-name']/a");
+    this.programName = page.locator(".course-name > a");
     
   }
 

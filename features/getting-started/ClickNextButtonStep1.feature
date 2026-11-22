@@ -10,4 +10,13 @@ Feature: Click on the next button on step 1
     Background:
         Given user is on the enrollment page
 
-   
+    @sep19-1
+    Scenario Outline: Next button takes the customer to step 2 with valid details
+        When customer provides "<field_set>" personal details
+        And customer clicks the Next button
+        Then customer should be taken to step 2
+
+        Examples:
+            | field_set       |
+            | all fields      |
+            | required fields |

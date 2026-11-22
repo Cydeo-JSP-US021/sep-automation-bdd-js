@@ -7,21 +7,17 @@ export class StartApplicationPage extends BasePage {
   constructor(page) {
     super(page);
 
-    this.startApplicationText = page.locator(
-      "(//div[@class = 'step-title'])[1]"
-    );
+    this.startApplicationText = page.getByText("Start Application", { exact: true });
 
-    this.paymentPlanText = page.locator("(//div[@class = 'step-title'])[2]");
+    this.paymentPlanText = page.getByText("Payment plan", { exact: true });
 
-    this.reviewText = page.locator("(//div[@class = 'step-title'])[3]");
+    this.reviewText = page.getByText("Review", { exact: true });
 
-    this.startApplicationStepCircle = page.locator(
-      "(//*[@class='step-circle'])[1]"
-    );
+    this.startApplicationStepCircle = page.locator(".step-circle").nth(0);
 
-    this.paymentPlanStepCircle = page.locator("(//*[@class='step-circle'])[2]");
+    this.paymentPlanStepCircle = page.locator(".step-circle").nth(1);
 
-    this.reviewStepCircle = page.locator("(//*[@class='step-circle'])[3]");
+    this.reviewStepCircle = page.locator(".step-circle").nth(2);
 
     this.firstNameInputBox = page.getByLabel("First Name");
 

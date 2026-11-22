@@ -26,7 +26,11 @@ BDD Automation Framework workflow:
                                             if failing due to environment issue ---> not code issue, can not fix it our selves
                                             if failing due to product defect --> create a bug ticket
 
+Skills: Reusable task instructions
 
+Agents: A specialist role with behavior and allowed tools
+
+        agents can not re-run themselves
 
 
 Next Week: 

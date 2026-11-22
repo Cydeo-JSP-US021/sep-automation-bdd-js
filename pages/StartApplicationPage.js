@@ -23,23 +23,15 @@ export class StartApplicationPage extends BasePage {
 
     this.reviewStepCircle = page.locator("(//*[@class='step-circle'])[3]");
 
-    this.firstNameInputBox = page.locator(
-      "//input[@formcontrolname='firstName']"
-    );
+    this.firstNameInputBox = page.getByLabel("First Name");
 
-    this.lastNameInputBox = page.locator(
-      "//input[@formcontrolname='lastName']"
-    );
+    this.lastNameInputBox = page.getByLabel("Last Name");
 
-    this.emailInputBox = page.locator("//input[@formcontrolname='email']");
+    this.emailInputBox = page.getByLabel("Email Address");
 
-    this.phoneNumberInputBox = page.locator(
-      "//input[@formcontrolname='phoneNumber']"
-    );
+    this.phoneNumberInputBox = page.getByLabel("Phone");
 
-    this.howDidYouHearAboutUsDropDown = page.locator(
-      "//mat-label[text()='How did you hear about us?']"
-    );
+    this.howDidYouHearAboutUsDropDown = page.getByRole("combobox");
 
     this.emailOptionFromDropDown = page.locator(
       "//mat-option/span[contains(text(), 'Email')]"
@@ -111,9 +103,7 @@ export class StartApplicationPage extends BasePage {
       .locator("//p[@class = 'footer-text' and contains(text(), 'Need help?')]")
       .filter({ visible: true });
 
-    this.nextButton = page.locator(
-      "//button[@class = 'next-button'][contains(text(), 'Next')]"
-    );
+    this.nextButton = page.getByRole("button", { name: "Next", exact: true });
 
     this.programBasePrice = page.locator("//span[@class='ng-star-inserted']/s");
 
@@ -161,27 +151,10 @@ export class StartApplicationPage extends BasePage {
    */
   async selectHowDidYouHearAboutUs(howDidYouHear) {
     howDidYouHear = howDidYouHear.toLowerCase();
-    await this.howDidYouHearAboutUsDropDown.click();
-    switch (howDidYouHear) {
-      case "email":
-        await this.emailOptionFromDropDown.click();
-        break;
-      case "facebook":
-        await this.facebookOptionFromDropDown.click();
-        break;
-      case "google":
-        await this.googleOption.click();
-        break;
-      case "instagram":
-        await this.instagramOptionFromDropDown.click();
-        break;
-      case "linkedin":
-        await this.linkedInOptionFromDropDown.click();
-        break;
-      case "twitter":
-        await this.twitterOptionFromDropDown.click();
-        break;
-    }
+    await this.howDidYouHearAboutUsDropDown.click({ force: true });
+    await this.page
+      .getByRole("option", { name: howDidYouHear, exact: false })
+      .click();
   }
 
   async clickNextButton() {

@@ -77,8 +77,9 @@ export class StartApplicationPage extends BasePage {
       "(//input[@formcontrolname='phoneNumber'])[2]"
     );
 
-    this.flexiblePaymentsPlanAvailableText = page.locator(
-      "//p[text() = 'Flexible payments plan available']"
+    this.flexiblePaymentsPlanAvailableText = page.getByText(
+      "Flexible payments plan available",
+      { exact: true }
     );
 
     this.programStartDate = page.locator(
@@ -88,12 +89,10 @@ export class StartApplicationPage extends BasePage {
     this.refundEndDate = page.locator("(//b[@class='info-value'])[2]");
 
     this.programNameOnInfoCard = page.locator(
-      "//p[@class='program-title primary-color']"
+      ".program-title.primary-color"
     );
 
-    this.programPrice = page.locator(
-      "//div[@class='col-sm']/b[@class = 'info-primary']"
-    );
+    this.programPrice = page.locator(".col-sm > b.info-primary").first();
 
     this.footer = page
       .locator("//p[@class = 'footer-text' and contains(text(), 'Need help?')]")

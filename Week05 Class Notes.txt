@@ -1,0 +1,25 @@
+Week 05 Review:
+    1. SEP Playwright BDD framework
+
+    2. Agentic workflow (Zero Coding)
+
+Class starts at 10:05 AM EST
+
+Next Week: 
+    TypeScript Modules
+    TypeScript version of BDD framework
+    TDD framework 
+
+Next Week' live class:
+    TypeScript VS JavaScript
+    TDD vs BDD
+
+    request & base url (one hour)
+
+    Antigravity:
+        sub Agents
+        browser
+        autonomous browser Agents
+        cli
+
+    
